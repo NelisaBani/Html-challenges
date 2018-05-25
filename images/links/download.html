@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec"  prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8" />
+<meta content='initial-scale=1.0, width=device-width' name='viewport'>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>GA Blog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://generalassemb.ly/blog/xmlrpc.php" />
+<link rel="shortcut icon" href="https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/themes/twentytwelve-child/favicon.ico" /> 
+<!-- Hotjar Tracking Code for generalassemb.ly/blog -->
+  <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:171933,hjsv:5};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <script>window.twttr = (function (d, s, id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src= "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));</script>
+  <!-- navi: css --><link rel='stylesheet' href='https://ga-navi-production-herokuapp-com.global.ssl.fastly.net/assets/application-e3136b26b5f0dc9dc414c77efb12fef1fad459c9c402e02918dbafa911e595dd.css' type='text/css' media='all' /><!-- /navi: css -->  <script src="//cdn.optimizely.com/js/392850087.js"></script>
+<!-- This site is optimized with the Yoast SEO plugin v3.4.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://generalassemb.ly/blog/" />
+<link rel="next" href="https://generalassemb.ly/blog/page/2/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="GA Blog" />
+<meta property="og:url" content="https://generalassemb.ly/blog/" />
+<meta property="og:site_name" content="GA Blog" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"https:\/\/generalassemb.ly\/blog\/","name":"GA Blog","potentialAction":{"@type":"SearchAction","target":"https:\/\/generalassemb.ly\/blog\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//blog-pantheon-prod.global.ssl.fastly.net' />
+<link rel='dns-prefetch' href='//ak.sail-horizon.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="GA Blog &raquo; Feed" href="https://generalassemb.ly/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="GA Blog &raquo; Comments Feed" href="https://generalassemb.ly/blog/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/generalassemb.ly\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='tm_clicktotweet-css'  href='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/plugins/click-to-tweet-by-todaymade/assets/css/styles.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/plugins/jetpack/css/jetpack.css?ver=4.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-stats-css'  href='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/plugins/wp-stats/stats-css.css?ver=2.50' type='text/css' media='all' />
+<link rel='stylesheet' id='myStyle-css'  href='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/themes/twentytwelve-child/style.css?ver=4.6.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://generalassemb.ly/blog/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://generalassemb.ly/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js?ver=1.7.1'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js?ver=1.9.0'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/builder.js?ver=1.9.0'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/effects.js?ver=1.9.0'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/dragdrop.js?ver=1.9.0'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/slider.js?ver=1.9.0'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/controls.js?ver=1.9.0'></script>
+<script type='text/javascript' src='//ak.sail-horizon.com/onsite/personalize.v0.0.3.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/themes/twentytwelve-child/js/header.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/themes/twentytwelve-child/js/analytics.js?ver=4.6.1'></script>
+<link rel='https://api.w.org/' href='https://generalassemb.ly/blog/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://generalassemb.ly/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://generalassemb.ly/blog/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel='shortlink' href='https://wp.me/7kSSg' />
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-18018358-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">
+  var _kmq = _kmq || [];
+  var _kmk = _kmk || 'c40077c10bb2e9f4e7d70f18139c61a34b97f556';
+  function _kms(u){
+    setTimeout(function(){
+    var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
+    s.src = u; f.parentNode.insertBefore(s, f);
+    }, 1);
+  }
+  _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+  /*
+  // Comment this out since General Assembly has activated the universal Page View functionality in Kissmetrics
+  // to track all page views: https://generalassembly.atlassian.net/wiki/display/ENG/Kissmetrics
+  _kmq.push(function() {
+    if(document.getElementsByTagName('body')[0].className.match('home')) {
+    	_kmq.push(['record', 'Viewed Blog Homepage']);
+    }
+  });
+  */
+
+_kmq.push(function() {
+	if(window.twttr) {
+	  window.twttr.events.bind('tweet', function (event) {
+	    var url = KM.uprts(decodeURIComponent(event.target.src).replace('#', '?')).params.url;
+	    _kmq.push(['record', 'Tweet', { 'Shared URL': url }]);
+	  });
+
+	  window.twttr.events.bind('follow', function (event) {
+	  	_kmq.push(['record', 'Twitter Follow', { 'Username': event.data.screen_name }]);
+	  });
+	}
+
+	if(window.FB) {
+	  window.FB.Event.subscribe('edge.create', function (url) {
+	    _kmq.push(['record', 'Like', { 'Shared URL': url }]);
+	  });
+
+	  window.FB.Event.subscribe('edge.remove', function (url) {
+	    _kmq.push(['record', 'Unlike', { 'Shared URL': url }]);
+	  });
+
+	  window.FB.Event.subscribe('auth.login', function (url) {
+	    _kmq.push(['record', 'Facebook Connect\'d']);
+	  });
+
+	  window.FB.Event.subscribe('auth.logout', function (url) {
+	    _kmq.push(['record', 'Facebook Logout']);
+	  });
+	}
+});
+_kmq.push(function() {
+		if(document.getElementsByTagName('body')[0].className.match('search-results')) {
+			try {
+				var query = KM.uprts(decodeURIComponent(window.location.href)).params.s;
+				_kmq.push(['record', 'Searched Site', {'WordPress Search Query': query}]);
+			} catch(e) {}
+		}
+	});
+</script>
+				
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+<link rel='dns-prefetch' href='//i0.wp.com'>
+<link rel='dns-prefetch' href='//i1.wp.com'>
+<link rel='dns-prefetch' href='//i2.wp.com'>
+	<style type="text/css" id="twentytwelve-header-css">
+			.site-header h1 a,
+		.site-header h2 {
+			color: #444;
+		}
+		</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+</head>
+<body class="home blog custom-background custom-background-white">
+  <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJGJ5C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGJ5C');</script>
+<!-- End Google Tag Manager -->
+      <!-- navi: header --><script>
+  window._GA_kissmetrics_key = "f543fde6e50e7692c56bc84f0cdbee0d1b2384ad"
+  window._GA_visitor_id_cookie_name = "_general_assembly_visitor_id"
+</script>
+
+<script>
+  window._GA_announcements_enabled = false
+  window._GA_announcements_items = []
+  window._GA_announcements_exclusions = []
+</script>
+
+<nav class='navi' data-navi>
+<div class='navi_announcements'></div>
+<div class='navi_banner-container'>
+<div class='navi_banner'>
+<a class="navi_banner_logo" href="https://generalassemb.ly">General Assembly</a>
+<a id="hamburger" class="navi_banner_menu_toggle" href="https://generalassemb.ly">Toggle Menu</a>
+</div>
+<ul class='navi_menu'>
+<li class='navi_menu_item js-item-dropdown on-campus'>
+<a class="navi_menu_item_link -has-dropdown" data-analytics-event="oncampus" href="https://generalassemb.ly/education">On Campus</a>
+<div class='navi_menu_dropdown'>
+<div class='navi_menu_col-6'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/education?format=immersives">Full-Time Courses</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/web-development-immersive">Web Development Immersive</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/user-experience-design-immersive">User Experience Design Immersive</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/data-science-immersive">Data Science Immersive</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/marketing/digital-marketing-immersive">Digital Marketing Immersive</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/ios-development-immersive">iOS Development Immersive</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/android-development-immersive">Android Development Immersive</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/education?format=courses">Part-Time Courses</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/user-experience-design">User Experience Design</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/data-analytics">Data Analytics</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/digital-marketing">Digital Marketing</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/data-science">Data Science</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/product-management">Product Management</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/visual-design">Visual Design</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/front-end-web-development">Front-End Web Development</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/javascript-development">JavaScript Development</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class='navi_menu_col-6'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/education?format=classes-workshops">Classes &amp; Workshops</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education?format=classes-workshops">View All Upcoming</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/education?format=events">Events</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education?format=events">View All Upcoming</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='navi_menu_item js-item-dropdown online'>
+<a class="navi_menu_item_link -has-dropdown" data-analytics-event="online" href="https://generalassemb.ly/education?where=online">Online</a>
+<div class='navi_menu_dropdown'>
+<div class='navi_menu_col-12'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/education?where=online#full-time">Full-Time Courses</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/web-development-immersive-remote">Web Development Immersive Remote</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/education?where=online#part-time">Part-Time Courses</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/learn-data-analysis-online">Data Analysis</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/learn-user-experience-design-online">User Experience Design</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/learn-html-css-web-design-online">HTML, CSS &amp; Web Design</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/learn-digital-marketing-online">Digital Marketing</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education/learn-javascript-online">JavaScript Development</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/education?where=online#catalog-results">Short-Form Offerings</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/education?where=online#catalog-results">Classes &amp; Workshops</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://dash.generalassemb.ly">Free - Learn to Code</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='navi_menu_item js-item-dropdown topics'>
+<a class="navi_menu_item_link -has-dropdown" data-analytics-event="topics" href="https://generalassemb.ly/browse">Topics</a>
+<div class='navi_menu_dropdown'>
+<div class='navi_menu_col-6'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/coding">Coding</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/coding/front-end-web-development">Front-End Web Development</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/coding/full-stack-web-development">Full-Stack Web Development</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/coding/ios-and-android-development">iOS &amp; Android Development</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/design">Design</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/design/user-experience-design">User Experience Design</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/design/visual-design">Visual Design</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/data">Data</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/data/data-science">Data Science</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/data/data-analysis">Data Analysis</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class='navi_menu_col-6'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/marketing">Marketing</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/marketing/digital-marketing">Digital Marketing</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/business">Business</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/business/product-management">Product Management</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/business/startups-entrepreneurship">Startups &amp; Entrepreneurship</a>
+</li>
+</ul>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/career-development">Career Development</a>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/career-development/professional-skills">Professional Skills</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='navi_menu_item js-item-dropdown locations'>
+<a class="navi_menu_item_link -has-dropdown" data-analytics-event="locations" href="https://generalassemb.ly/locations">Locations</a>
+<div class='navi_menu_dropdown'>
+<div class='navi_menu_col-6'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/locations#north-america">North America</a>
+<div class='navi_menu_col-4 north_america_col'>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/atlanta">Atlanta</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/austin">Austin</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/boston">Boston</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/chicago">Chicago</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/dallas">Dallas</a>
+</li>
+</ul>
+</div>
+<div class='navi_menu_col-4 north_america_col'>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/denver">Denver</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/los-angeles">Los Angeles</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/new-york-city">New York City</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/providence">Providence</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/san-diego">San Diego</a>
+</li>
+</ul>
+</div>
+<div class='navi_menu_col-4 north_america_col'>
+<ul class='navi_menu_dropdown_nested-dropdown'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/san-francisco">San Francisco</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/seattle">Seattle</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" target="_blank" rel="noopener" href="https://bitmaker.co?ga=1&amp;utm_campaign=bmredirect&amp;utm_source=ga">Toronto
+<span class='bitmaker-icon' title='Bitmaker'>Bitmaker</span>
+</a></li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/washington-dc">Washington D.C.</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class='navi_menu_col-2'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/locations#europe">Europe</a>
+<ul class='navi_menu_dropdown_nested-dropdown -padding-bottom'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/london">London</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class='navi_menu_col-2'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/locations#asia">Asia</a>
+<ul class='navi_menu_dropdown_nested-dropdown -padding-bottom'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/hong-kong">Hong Kong</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/singapore">Singapore</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class='navi_menu_col-2'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_heading -has-nested-dropdown" href="https://generalassemb.ly/locations#australia">Australia</a>
+<ul class='navi_menu_dropdown_nested-dropdown -padding-bottom'>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/brisbane">Brisbane</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/melbourne">Melbourne</a>
+</li>
+<li>
+<a class="navi_menu_dropdown_link" href="https://generalassemb.ly/locations/sydney">Sydney</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class='navi_menu_item js-item-dropdown companies'>
+<a class="navi_menu_item_link -has-dropdown" data-analytics-event="forcompanies" href="https://generalassemb.ly/corporate-digital-training">For Companies</a>
+<div class='navi_menu_dropdown'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/corporate-digital-training">Business Solutions</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/corporate-digital-training/talent-acquisition">Acquire Talent</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/corporate-digital-training/onboarding-process">Onboard Talent</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/corporate-digital-training/upskill-training">Upskill Talent</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/corporate-digital-training/talent-assessment">Benchmark Talent</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/corporate-digital-training/reskilling">Reskill Talent</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/corporate-digital-training/request-more-information">Connect With Us</a>
+</li>
+</ul>
+</div>
+</li>
+<li class='navi_menu_item js-item-dropdown about'>
+<a class="navi_menu_item_link -has-dropdown" data-analytics-event="about" href="https://generalassemb.ly/why-ga-is-worth-it">About</a>
+<div class='navi_menu_dropdown'>
+<ul class='navi_menu_dropdown'>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/why-ga-is-worth-it">Why GA?</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://generalassemb.ly/about">Our Story</a>
+</li>
+<li class='navi_menu_dropdown_item'>
+<a class="navi_menu_dropdown_link -with-border" href="https://theindex.generalassemb.ly">Blog</a>
+</li>
+</ul>
+</div>
+</li>
+<li class='navi_menu_item highlight'>
+<a class="navi_menu_item_link" data-analytics-event="find-your-course" href="https://generalassemb.ly/findyourcourse">Find Your Course</a>
+</li>
+<li class='navi_menu_item -account js-item-dropdown'>
+<a class="navi_menu_item_link -no-dropdown" data-analytics-event="account" href="/users/auth/generalassembly">Sign In</a>
+
+</li>
+</ul>
+</div>
+</nav>
+<!-- / navi header -->  
+  <div id="main" class="wrapper max-width has-padding">
+    <header id="header">
+      <h1 class="site-title no-hover"><a href="https://generalassemb.ly/blog/" title="GA Blog" rel="home">GA Blog</a></h1>
+      <p class="site-description"></p>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53daa4802054fc2a"></script>
+    </header>
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+		
+										
+  <article id="post-980203363" class="post-980203363 post type-post status-publish format-standard hentry category-ux-and-design tag-design tag-invision tag-product-design-2 tag-prototyping tag-ux-design">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/best-prototyping-tools-ux-design-2018/" title="Permalink to The Best Prototyping Tools for UX Designers in 2018" rel="bookmark">The Best Prototyping Tools for UX Designers in 2018</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/jaredrogers/" title="Posts by Jared Rogers" class="author url fn" rel="author">Jared Rogers</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <p><span style="font-weight: 400;"><img class="alignnone size-full wp-image-980203364" src="https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/02/Best-Prototyping-Tools_Header.jpg?resize=625%2C391&#038;ssl=1" alt="Best Prototyping Tools 2018" srcset="https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/02/Best-Prototyping-Tools_Header.jpg?w=1200&amp;ssl=1 1200w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/02/Best-Prototyping-Tools_Header.jpg?resize=300%2C188&amp;ssl=1 300w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/02/Best-Prototyping-Tools_Header.jpg?resize=768%2C480&amp;ssl=1 768w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/02/Best-Prototyping-Tools_Header.jpg?resize=1024%2C640&amp;ssl=1 1024w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/02/Best-Prototyping-Tools_Header.jpg?resize=624%2C390&amp;ssl=1 624w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/02/Best-Prototyping-Tools_Header.jpg?resize=50%2C31&amp;ssl=1 50w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" />After synthesizing </span><a href="https://generalassemb.ly/business/product-management/user-interviews?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=best-prototyping-tools" id="link_5ac7626402a36"><span style="font-weight: 400;">user research</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626402a36","Article link clicked",{"Title":"<span style=\"font-weight: 400;\">user research<\/span>","Page":"The Best Prototyping Tools for UX Designers in 2018"}]);</script><span style="font-weight: 400;"> and thoroughly uncovering problems to solve, </span><a href="https://generalassemb.ly/design/user-experience-design?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=best-prototyping-tools" id="link_5ac7626402d8b"><span style="font-weight: 400;">user experience (UX) designers</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626402d8b","Article link clicked",{"Title":"<span style=\"font-weight: 400;\">user experience (UX) designers<\/span>","Page":"The Best Prototyping Tools for UX Designers in 2018"}]);</script><span style="font-weight: 400;"> begin their design by ideating on a number of solutions. This is where the creative magic happens! Designers sketch to explore many workable solutions to user problems, then narrow them down to the strongest concept. Using that concept, the next step is creating a workable prototype that can be tested for viability against the user’s goals and business needs.</span></p>
+<p> <a href="https://generalassemb.ly/blog/best-prototyping-tools-ux-design-2018/#more-980203363" class="more-link" id="link_5ac76264030c0">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264030c0","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"The Best Prototyping Tools for UX Designers in 2018"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/ux-and-design/" rel="category tag">UX &amp; Design</a> and tagged <a href="https://generalassemb.ly/blog/tag/design/" rel="tag">design</a>, <a href="https://generalassemb.ly/blog/tag/invision/" rel="tag">InVision</a>, <a href="https://generalassemb.ly/blog/tag/product-design-2/" rel="tag">product design</a>, <a href="https://generalassemb.ly/blog/tag/prototyping/" rel="tag">prototyping</a>, <a href="https://generalassemb.ly/blog/tag/ux-design/" rel="tag">UX Design</a> on <a href="https://generalassemb.ly/blog/best-prototyping-tools-ux-design-2018/" title="4:56 pm" rel="bookmark"><time class="entry-date" datetime="2018-02-05T16:56:23+00:00">February 5, 2018</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/jaredrogers/" title="View all posts by Jared Rogers" rel="author">Jared Rogers</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203334" class="post-980203334 post type-post status-publish format-standard hentry category-business category-ux-and-design tag-product-management tag-user-experience tag-user-experience-design">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/product-experience-loop-user-experience-mode-shift-friction/" title="Permalink to Don’t Frustrate Users With Gaps in Your Product Experience" rel="bookmark">Don’t Frustrate Users With Gaps in Your Product Experience</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/shiren/" title="Posts by Shiren Vijiasingam" class="author url fn" rel="author">Shiren Vijiasingam</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <div id="attachment_980203347" style="width: 635px" class="wp-caption alignnone"><a href="https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?ssl=1" target="_blank" id="link_5ac762640bfd1"><img src="https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?resize=625%2C446&#038;ssl=1" alt="There are countless steps where the product experience can break down." class="size-large wp-image-980203347" srcset="https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?resize=1024%2C731&amp;ssl=1 1024w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?resize=300%2C214&amp;ssl=1 300w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?resize=768%2C549&amp;ssl=1 768w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?resize=624%2C446&amp;ssl=1 624w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?resize=50%2C36&amp;ssl=1 50w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?w=1250&amp;ssl=1 1250w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2018/01/Product-Experience-Loop-1400-1.png?w=1875&amp;ssl=1 1875w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" /></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762640bfd1","Article link clicked",{"Title":"<img src=\"https:\/\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1-1024x731.png\" alt=\"There are countless steps where the product experience can break down.\" width=\"625\" height=\"446\" class=\"size-large wp-image-980203347\" srcset=\"https:\/\/i2.wp.com\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1.png?resize=1024%2C731&amp;ssl=1 1024w, https:\/\/i2.wp.com\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1.png?resize=300%2C214&amp;ssl=1 300w, https:\/\/i2.wp.com\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1.png?resize=768%2C549&amp;ssl=1 768w, https:\/\/i2.wp.com\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1.png?resize=624%2C446&amp;ssl=1 624w, https:\/\/i2.wp.com\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1.png?resize=50%2C36&amp;ssl=1 50w, https:\/\/i2.wp.com\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1.png?w=1250&amp;ssl=1 1250w, https:\/\/i2.wp.com\/blog-pantheon-prod.global.ssl.fastly.net\/blog\/wp-content\/uploads\/2018\/01\/Product-Experience-Loop-1400-1.png?w=1875&amp;ssl=1 1875w\" sizes=\"(max-width: 625px) 100vw, 625px\" \/>","Page":"Don\u2019t Frustrate Users With Gaps in Your Product Experience"}]);</script><p class="wp-caption-text">There are countless steps where the product experience can break down.</p></div>
+<p>There are countless steps where the product experience can break down. Have you ever been waiting at the corner for a ride-sharing pickup, and while the app swears the driver is right there, there is no car in sight? Or how about seamlessly ordering groceries in an app, then waiting well past the delivery window with no sign of your avocados? Ever called customer service by phone to learn they have no record of the two detailed chats you had with online agents about your issue? We’ve all been there.</p>
+<p>As consumers who increasingly rely on technology to help us wrangle a vast range of goods and services, we’ve all experienced pain points when <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/coding?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" target="_blank" rel="noopener" data-href="https://generalassemb.ly/coding?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" id="link_5ac762640c376">really good software</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762640c376","Article link clicked",{"Title":"really good software","Page":"Don\u2019t Frustrate Users With Gaps in Your Product Experience"}]);</script> doesn’t equate a really good <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/design/user-experience-design?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" target="_blank" rel="noopener" data-href="https://generalassemb.ly/design/user-experience-design?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" id="link_5ac762640c6cb">experience</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762640c6cb","Article link clicked",{"Title":"experience","Page":"Don\u2019t Frustrate Users With Gaps in Your Product Experience"}]);</script>. All too often, there’s a breakdown that occurs outside product screens, when a product or process hits the reality of the human experience or a user fails.</p>
+<p>Take a peek at the diagram above, which charts the various user touch points that can occur with your brand in a product experience loop. Users interact with a <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/business/product-management?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" target="_blank" rel="noopener" data-href="https://generalassemb.ly/business/product-management?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" id="link_5ac762640ca15">product</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762640ca15","Article link clicked",{"Title":"product","Page":"Don\u2019t Frustrate Users With Gaps in Your Product Experience"}]);</script> through many different channels and modes of communication, and bridging the gaps between them is essential to your product’s success. If you present users with a custom call to action in a <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/marketing/digital-marketing/paid-social?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" target="_blank" rel="noopener" data-href="https://generalassemb.ly/marketing/digital-marketing/paid-social?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=mode-shift-friction" id="link_5ac762640cdce">social media ad</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762640cdce","Article link clicked",{"Title":"social media ad","Page":"Don\u2019t Frustrate Users With Gaps in Your Product Experience"}]);</script>, your customer service teams must be ready to respond. If you build an offer email that is redeemable at a brick-and-mortar retail location, the cashier will need tools to redeem it.</p>
+<p> <a href="https://generalassemb.ly/blog/product-experience-loop-user-experience-mode-shift-friction/#more-980203334" class="more-link" id="link_5ac762640d10c">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762640d10c","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"Don\u2019t Frustrate Users With Gaps in Your Product Experience"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/business/" rel="category tag">Business</a>, <a href="https://generalassemb.ly/blog/category/ux-and-design/" rel="category tag">UX &amp; Design</a> and tagged <a href="https://generalassemb.ly/blog/tag/product-management/" rel="tag">product management</a>, <a href="https://generalassemb.ly/blog/tag/user-experience/" rel="tag">user experience</a>, <a href="https://generalassemb.ly/blog/tag/user-experience-design/" rel="tag">user experience design</a> on <a href="https://generalassemb.ly/blog/product-experience-loop-user-experience-mode-shift-friction/" title="4:16 pm" rel="bookmark"><time class="entry-date" datetime="2018-01-17T16:16:02+00:00">January 17, 2018</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/shiren/" title="View all posts by Shiren Vijiasingam" rel="author">Shiren Vijiasingam</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203316" class="post-980203316 post type-post status-publish format-standard hentry category-life-at-ga category-career-development category-social-impact tag-codebridge tag-per-scholas tag-policy tag-social-impact tag-standards-boards">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/path-diverse-vibrant-tech-community/" title="Permalink to The Path to a Diverse, Vibrant Tech Community" rel="bookmark">The Path to a Diverse, Vibrant Tech Community</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/gablog/" title="Posts by General Assembly" class="author url fn" rel="author">General Assembly</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <div id="attachment_980203319" style="width: 810px" class="wp-caption aligncenter"><img src="https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/Index2017WrapUp_1.jpg?resize=625%2C391&#038;ssl=1" alt="CodeBridge General Assembly Per Scholas Graduation" class="size-full wp-image-980203319" srcset="https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/Index2017WrapUp_1.jpg?w=800&amp;ssl=1 800w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/Index2017WrapUp_1.jpg?resize=300%2C188&amp;ssl=1 300w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/Index2017WrapUp_1.jpg?resize=768%2C480&amp;ssl=1 768w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/Index2017WrapUp_1.jpg?resize=624%2C390&amp;ssl=1 624w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/Index2017WrapUp_1.jpg?resize=50%2C31&amp;ssl=1 50w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" /><p class="wp-caption-text">Anthony Pegues, second from right, with Per Scholas CEO Plinio Ayala (far right), and fellow graduates from CodeBridge, a web development training partnership between General Assembly and Per Scholas.</p></div>
+<p><span style="font-weight: 400;">Anthony Pegues was a part-time janitor in the suburbs of New York City who sought a way into a rewarding career. He saw tech — and web development specifically — as a viable path, but didn’t have the resources to get the skills he needed to be ready for a job in the field.</span></p>
+<p><span style="font-weight: 400;">Unfortunately, Pegues’ situation is all too common. There are plenty of tech jobs available, and people who are eager to fill them. But many passionate, prospective developers from underserved and overlooked communities do not have the resources, time, or opportunities to pursue their passions and get the skills they need to transform their careers.</span></p>
+<p><span style="font-weight: 400;">At General Assembly, our central mission is to create pathways so that everyone with the dedication and commitment to reshape their career can do so, regardless of their prior experience or ability to pay for the training they need to get there. To this end, we’ve spent the last few years launching and refining strategies and programs that </span><a href="https://theindex.generalassemb.ly/general-assembly-social-good-black-girls-code-workplace-diversity-34aa81b07d4a?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=2017-wrapup" id="link_5ac7626417145"><span style="font-weight: 400;">break down barriers and contribute to the diversity of the tech sector</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626417145","Article link clicked",{"Title":"<span style=\"font-weight: 400;\">break down barriers and contribute to the diversity of the tech sector<\/span>","Page":"The Path to a Diverse, Vibrant Tech Community"}]);</script><span style="font-weight: 400;">. </span></p>
+<p><span style="font-weight: 400;">But there’s still much more work to do. </span></p>
+<p> <a href="https://generalassemb.ly/blog/path-diverse-vibrant-tech-community/#more-980203316" class="more-link" id="link_5ac76264173ad">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264173ad","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"The Path to a Diverse, Vibrant Tech Community"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/life-at-ga/" rel="category tag">#LifeAtGA</a>, <a href="https://generalassemb.ly/blog/category/career-development/" rel="category tag">Career Development</a>, <a href="https://generalassemb.ly/blog/category/life-at-ga/social-impact/" rel="category tag">Social Impact</a> and tagged <a href="https://generalassemb.ly/blog/tag/codebridge/" rel="tag">CodeBridge</a>, <a href="https://generalassemb.ly/blog/tag/per-scholas/" rel="tag">Per Scholas</a>, <a href="https://generalassemb.ly/blog/tag/policy/" rel="tag">policy</a>, <a href="https://generalassemb.ly/blog/tag/social-impact/" rel="tag">Social Impact</a>, <a href="https://generalassemb.ly/blog/tag/standards-boards/" rel="tag">Standards Boards</a> on <a href="https://generalassemb.ly/blog/path-diverse-vibrant-tech-community/" title="12:08 pm" rel="bookmark"><time class="entry-date" datetime="2017-12-21T12:08:48+00:00">December 21, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/gablog/" title="View all posts by General Assembly" rel="author">General Assembly</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203302" class="post-980203302 post type-post status-publish format-standard hentry category-business category-career-development category-coding category-ux-and-design tag-agile tag-communication tag-design-thinking tag-lean tag-product-management">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/agile-vs-lean-vs-design-thinking-workflow/" title="Permalink to How Blending Lean, Agile, and Design Thinking Will Transform Your Team" rel="bookmark">How Blending Lean, Agile, and Design Thinking Will Transform Your Team</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/jeffgothelf/" title="Posts by Jeff Gothelf" class="author url fn" rel="author">Jeff Gothelf</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <div id="attachment_980203313" style="width: 2010px" class="wp-caption aligncenter"><img src="https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?resize=625%2C313&#038;ssl=1" alt="Lean vs Agile vs Design Thinking Jeff Gothelf" class="size-full wp-image-980203313" srcset="https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?w=2000&amp;ssl=1 2000w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?resize=300%2C150&amp;ssl=1 300w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?resize=768%2C384&amp;ssl=1 768w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?resize=1024%2C512&amp;ssl=1 1024w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?resize=624%2C312&amp;ssl=1 624w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?resize=50%2C25&amp;ssl=1 50w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?w=1250&amp;ssl=1 1250w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/12/LeavVsAgileVsDesign_800x593.png?w=1875&amp;ssl=1 1875w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" /><p class="wp-caption-text">Jeff Gothelf&#8217;s new book, Lean vs. Agile vs. Design Thinking</p></div>
+<p><i><span style="font-weight: 400;">The following is an adapted excerpt from </span></i><a href="https://www.amazon.com/dp/B076JJQBYT/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1" target="_blank" id="link_5ac762641f998"><i><span style="font-weight: 400;">Lean vs. Agile vs. Design Thinking</span></i></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762641f998","Article link clicked",{"Title":"<i><span style=\"font-weight: 400;\">Lean vs. Agile vs. Design Thinking<\/span><\/i>","Page":"How Blending Lean, Agile, and Design Thinking Will Transform Your\u00a0Team"}]);</script><i><span style="font-weight: 400;"> by designer, team leader, and business coach Jeff Gothelf.</span></i></p>
+<p><span style="font-weight: 400;">In 2016, I was preparing with clients for an upcoming training workshop focused on coaching a cross-functional team of designers, software engineers, product managers, and business stakeholders on integrating product discovery practices into their delivery cadences. During our conversation, my client said to me, “Our tech teams are learning </span><a href="https://generalassemb.ly/business/product-management/agile-methodologies?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=agile-lean-book" target="_blank" id="link_5ac762641fc8b"><span style="font-weight: 400;">Agile</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762641fc8b","Article link clicked",{"Title":"<span style=\"font-weight: 400;\">Agile<\/span>","Page":"How Blending Lean, Agile, and Design Thinking Will Transform Your\u00a0Team"}]);</script><span style="font-weight: 400;">. Our product teams are learning </span><a href="https://generalassemb.ly/business/product-management/lean-methodology-and-lean-startup?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=agile-lean-book" target="_blank" id="link_5ac762641ff93"><span style="font-weight: 400;">Lean</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762641ff93","Article link clicked",{"Title":"<span style=\"font-weight: 400;\">Lean<\/span>","Page":"How Blending Lean, Agile, and Design Thinking Will Transform Your\u00a0Team"}]);</script><span style="font-weight: 400;">, and our design teams are learning </span><a href="https://generalassemb.ly/education/visual-design?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=agile-lean-book" target="_blank" id="link_5ac76264202ad"><span style="font-weight: 400;">Design Thinking</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264202ad","Article link clicked",{"Title":"<span style=\"font-weight: 400;\">Design Thinking<\/span>","Page":"How Blending Lean, Agile, and Design Thinking Will Transform Your\u00a0Team"}]);</script><span style="font-weight: 400;">. Which one is right?”</span></p>
+<p><span style="font-weight: 400;">The client found the different disciplines at odds because these seemingly complementary practices forced each discipline into different cadences, with different practices and vocabularies targeting different measures of success.</span></p>
+<p><span style="font-weight: 400;">The engineering teams, using Agile, were focused on shipping bug-free code in regular release cycles (many teams call these “sprints”). Their ultimate goal was an increased velocity — the quantity of code they could ship in each sprint. Product managers, using Lean, were most interested in driving efficiency, quality, and reduction of waste through tactical backlog prioritization and grooming techniques.</span></p>
+<p> <a href="https://generalassemb.ly/blog/agile-vs-lean-vs-design-thinking-workflow/#more-980203302" class="more-link" id="link_5ac76264205a3">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264205a3","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"How Blending Lean, Agile, and Design Thinking Will Transform Your\u00a0Team"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/business/" rel="category tag">Business</a>, <a href="https://generalassemb.ly/blog/category/career-development/" rel="category tag">Career Development</a>, <a href="https://generalassemb.ly/blog/category/coding/" rel="category tag">Coding</a>, <a href="https://generalassemb.ly/blog/category/ux-and-design/" rel="category tag">UX &amp; Design</a> and tagged <a href="https://generalassemb.ly/blog/tag/agile/" rel="tag">agile</a>, <a href="https://generalassemb.ly/blog/tag/communication/" rel="tag">communication</a>, <a href="https://generalassemb.ly/blog/tag/design-thinking/" rel="tag">design thinking</a>, <a href="https://generalassemb.ly/blog/tag/lean/" rel="tag">Lean</a>, <a href="https://generalassemb.ly/blog/tag/product-management/" rel="tag">product management</a> on <a href="https://generalassemb.ly/blog/agile-vs-lean-vs-design-thinking-workflow/" title="3:03 pm" rel="bookmark"><time class="entry-date" datetime="2017-12-14T15:03:59+00:00">December 14, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/jeffgothelf/" title="View all posts by Jeff Gothelf" rel="author">Jeff Gothelf</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203271" class="post-980203271 post type-post status-publish format-standard hentry category-life-at-ga category-social-impact tag-leadership tag-veterans-in-tech">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/veterans-general-assembly-servant-leadership-from-coast-guard-to-education/" title="Permalink to Servant Leadership: From Coast Guard to Education" rel="bookmark">Servant Leadership: From Coast Guard to Education</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/scott-kirkpatrick/" title="Posts by Scott Kirkpatrick" class="author url fn" rel="author">Scott Kirkpatrick</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <div id="attachment_980203279" style="width: 810px" class="wp-caption aligncenter"><img src="https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/11/GAVeteransIndex_ScottK_CoastGuard.png?resize=625%2C391&#038;ssl=1" alt="Scott Kirkpatrick General Assembly President Veteran" class="size-full wp-image-980203279" srcset="https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/11/GAVeteransIndex_ScottK_CoastGuard.png?w=800&amp;ssl=1 800w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/11/GAVeteransIndex_ScottK_CoastGuard.png?resize=300%2C188&amp;ssl=1 300w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/11/GAVeteransIndex_ScottK_CoastGuard.png?resize=768%2C480&amp;ssl=1 768w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/11/GAVeteransIndex_ScottK_CoastGuard.png?resize=624%2C390&amp;ssl=1 624w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/11/GAVeteransIndex_ScottK_CoastGuard.png?resize=50%2C31&amp;ssl=1 50w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" /><p class="wp-caption-text">While on active duty in 1997, GA President and COO Scott Kirkpatrick served as a military social aide to President Bill Clinton in the White House.</p></div>
+<p><b><i>To honor our veterans, we’ve compiled a series of interviews with General Assembly staff, students, and alumni that celebrates their time in the service, explores how they found a new career in tech, and reflects on the life and leadership lessons they learned along the way.</i></b></p>
+<p><b><i>Our first story is by Scott Kirkpatrick, General Assembly’s president and COO. If you are a veteran interested in boosting your career through General Assembly’s programs, learn about our discounts </i></b><a href="https://generalassemb.ly/get/tuition-credit-veterans-day?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=vetsday-scott" id="link_5ac7626428259"><b>here</b></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626428259","Article link clicked",{"Title":"<b>here<\/b>","Page":"Servant Leadership: From Coast Guard to Education"}]);</script><b> and GI Bill® eligibility </b><a href="https://generalassemb.ly/gi-bill?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=vetsday-scott" id="link_5ac76264284be"><b>here</b></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264284be","Article link clicked",{"Title":"<b>here<\/b>","Page":"Servant Leadership: From Coast Guard to Education"}]);</script><b>.</b></p>
+<p>Veterans Day is always a time of reflection and pride for me, and I always love to speak with other veterans about their military experiences. For me, my military career started when I chose to attend college at the U.S. Coast Guard Academy. My father served as a soldier in the Vietnam War, and he always taught me to do things bigger than myself. That value was the inspiration for me to attend the Coast Guard Academy instead of “normal” college.</p>
+<p>The mission of the Coast Guard is to save lives, and I was drawn to the humanitarian aspect of the service. I had no idea what I was getting into when I stepped onto campus for a summerlong bootcamp. It was a surreal experience in which the cadre shaved off my long hair, required me to square every corner and sleep with my rifle, and allowed only three responses: “Yes, sir/ma’am,” “No sir/ma’am,” or “No excuse sir/ma’am.” It was an intense summer, but I quickly learned the value of teamwork, respect, and perseverance. I relied on my classmates to get through extremely challenging and intimidating experiences — and those classmates are still close friends today.</p>
+<p> <a href="https://generalassemb.ly/blog/veterans-general-assembly-servant-leadership-from-coast-guard-to-education/#more-980203271" class="more-link" id="link_5ac762642876e">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762642876e","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"Servant Leadership: From Coast Guard to Education"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/life-at-ga/" rel="category tag">#LifeAtGA</a>, <a href="https://generalassemb.ly/blog/category/life-at-ga/social-impact/" rel="category tag">Social Impact</a> and tagged <a href="https://generalassemb.ly/blog/tag/leadership/" rel="tag">leadership</a>, <a href="https://generalassemb.ly/blog/tag/veterans-in-tech/" rel="tag">veterans in tech</a> on <a href="https://generalassemb.ly/blog/veterans-general-assembly-servant-leadership-from-coast-guard-to-education/" title="5:16 pm" rel="bookmark"><time class="entry-date" datetime="2017-11-09T17:16:47+00:00">November 9, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/scott-kirkpatrick/" title="View all posts by Scott Kirkpatrick" rel="author">Scott Kirkpatrick</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203265" class="post-980203265 post type-post status-publish format-standard hentry category-social-impact tag-diversity tag-diversity-inclusion tag-diversity-in-tech">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/diversity-inclusion-equity-differences-in-meaning/" title="Permalink to What&#8217;s the Difference Between Diversity, Inclusion, and Equity?" rel="bookmark">What&#8217;s the Difference Between Diversity, Inclusion, and Equity?</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/megbolger/" title="Posts by Meg Bolger" class="author url fn" rel="author">Meg Bolger</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <div style="width: 910px" class="wp-caption alignnone"><img class="graf-image" src="https://i0.wp.com/cdn-images-1.medium.com/max/900/1*i_MM9PyU5hhN0sbTSqrsAA.png?resize=625%2C313&#038;ssl=1" alt="Diversity Equity Inclusion Distinction" data-image-id="1*i_MM9PyU5hhN0sbTSqrsAA.png" data-width="1400" data-height="700" data-recalc-dims="1" /><p class="wp-caption-text">The often-used terms diversity, equity, and inclusion have distinct meanings. Here&#8217;s why that matters, and how they work together.</p></div>
+<p class="graf graf--p">Diversity. Inclusion. Equity. These words and the issues they point to loom large in tech. It’s hard to go a week without reading an article about a company touting its dedication to diversity, while another is called out for tolerating oppressive comments and workplace practices.</p>
+<p class="graf graf--p">From 2014–2016, Google spent $265 million to increase its diversity numbers (<a class="markup--anchor markup--p-anchor" href="https://www.fastcompany.com/3066914/google-and-tech-struggle-to-hack-bias-and-diversity" target="_blank" rel="noopener" data-href="https://www.fastcompany.com/3066914/google-and-tech-struggle-to-hack-bias-and-diversity" id="link_5ac7626433845">to little avail</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626433845","Article link clicked",{"Title":"to little avail","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script>), a number that has become even more well known after the company recently <a class="markup--anchor markup--p-anchor" href="https://www.nytimes.com/2017/08/07/business/google-women-engineer-fired-memo.html?mcubz=0" target="_blank" rel="noopener" data-href="https://www.nytimes.com/2017/08/07/business/google-women-engineer-fired-memo.html?mcubz=0" id="link_5ac7626433d79">fired</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626433d79","Article link clicked",{"Title":"fired","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script> an employee who wrote a <a class="markup--anchor markup--p-anchor" href="http://gizmodo.com/exclusive-heres-the-full-10-page-anti-diversity-screed-1797564320" target="_blank" rel="noopener" data-href="http://gizmodo.com/exclusive-heres-the-full-10-page-anti-diversity-screed-1797564320" id="link_5ac7626434236">memo</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626434236","Article link clicked",{"Title":"memo","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script> against diversity efforts. In a <a class="markup--anchor markup--p-anchor" href="https://www.atlassian.com/diversity/survey" target="_blank" rel="noopener" data-href="https://www.atlassian.com/diversity/survey" id="link_5ac76264346d5">2017 survey of tech employees</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264346d5","Article link clicked",{"Title":"2017 survey of tech employees","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script>, 72% reported that diversity and inclusion was important to their company. In <a class="markup--anchor markup--p-anchor" href="http://stateofstartups.firstround.com/2016/#highlights-diversity-prediction" target="_blank" rel="noopener" data-href="http://stateofstartups.firstround.com/2016/#highlights-diversity-prediction" id="link_5ac7626434b51">another report,</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626434b51","Article link clicked",{"Title":"another report,","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script> which surveyed over 700 startup founders, 45% of respondents reported that they talked about diversity and inclusion internally in the last year. The majority of participants in that survey believe that the tech industry’s employee makeup will be representative of the <a class="markup--anchor markup--p-anchor" href="https://www.theverge.com/2015/8/20/9179853/tech-diversity-scorecard-apple-google-microsoft-facebook-intel-twitter-amazon" target="_blank" rel="noopener" data-href="https://www.theverge.com/2015/8/20/9179853/tech-diversity-scorecard-apple-google-microsoft-facebook-intel-twitter-amazon" id="link_5ac7626434fbe">U.S. population</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626434fbe","Article link clicked",{"Title":"U.S. population","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script> in 2030, though that’s a far cry from where we are now.</p>
+<p class="graf graf--p">With all this talk about diversity, equity, and inclusion (DEI) in tech, there is no better time to dig deep and establish shared, fundamental understandings of these terms and their meanings. In my work as a <a class="markup--anchor markup--p-anchor" href="http://www.sameteam.xyz" target="_blank" rel="noopener" data-href="http://www.sameteam.xyz" id="link_5ac7626435447">DEI facilitator </a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626435447","Article link clicked",{"Title":"DEI facilitator ","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script>working with tech companies and in many less formal conversations, I’ve found that there’s widespread confusion. People get tripped up not only on definitions, but on how to use these terms to create goals and action plans for themselves and their organizations. When we can’t get on the same page, we can’t take the next step. So let’s start at the beginning and create a shared understanding of DEI together.</p>
+<p class="graf graf--p"> <a href="https://generalassemb.ly/blog/diversity-inclusion-equity-differences-in-meaning/#more-980203265" class="more-link" id="link_5ac7626435971">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626435971","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"What&#8217;s the Difference Between Diversity, Inclusion, and Equity?"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/life-at-ga/social-impact/" rel="category tag">Social Impact</a> and tagged <a href="https://generalassemb.ly/blog/tag/diversity/" rel="tag">Diversity</a>, <a href="https://generalassemb.ly/blog/tag/diversity-inclusion/" rel="tag">Diversity &amp; Inclusion</a>, <a href="https://generalassemb.ly/blog/tag/diversity-in-tech/" rel="tag">Diversity in tech</a> on <a href="https://generalassemb.ly/blog/diversity-inclusion-equity-differences-in-meaning/" title="3:04 pm" rel="bookmark"><time class="entry-date" datetime="2017-10-24T15:04:22+00:00">October 24, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/megbolger/" title="View all posts by Meg Bolger" rel="author">Meg Bolger</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203227" class="post-980203227 post type-post status-publish format-standard hentry category-business category-corporate-strategies category-marketing tag-corporate-training tag-digital-marketing tag-enterprise-hiring tag-hiring tag-hr tag-human-resources tag-recruiting tag-technical-recruiting">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/how-to-cultivate-top-tech-talent-what-every-exec-needs-to-know/" title="Permalink to How to Cultivate Top Tech Talent: What Every Exec Needs to Know" rel="bookmark">How to Cultivate Top Tech Talent: What Every Exec Needs to Know</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/anandchopramcgowan/" title="Posts by Anand Chopra-McGowan" class="author url fn" rel="author">Anand Chopra-McGowan</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <div id="attachment_980203243" style="width: 1270px" class="wp-caption aligncenter"><img src="https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/hiring-strategy-digital-skills-training.jpg?resize=625%2C260&#038;ssl=1" alt="Hiring Strategy Digital Skills Training" class="size-full wp-image-980203243" srcset="https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/hiring-strategy-digital-skills-training.jpg?w=1260&amp;ssl=1 1260w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/hiring-strategy-digital-skills-training.jpg?resize=300%2C125&amp;ssl=1 300w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/hiring-strategy-digital-skills-training.jpg?resize=768%2C319&amp;ssl=1 768w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/hiring-strategy-digital-skills-training.jpg?resize=1024%2C426&amp;ssl=1 1024w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/hiring-strategy-digital-skills-training.jpg?resize=624%2C260&amp;ssl=1 624w, https://i2.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/hiring-strategy-digital-skills-training.jpg?resize=50%2C21&amp;ssl=1 50w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" /><p class="wp-caption-text">Our recommendation is simple: Companies need to invest in learning.</p></div>
+<p><i>The following is an excerpt from </i><a href="http://enterprise-go.generalassemb.ly/cpg-whitepaper?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=cpg-whitepaper" id="link_5ac7626441f18">6 People Strategies for Successful Digital Transformation</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626441f18","Article link clicked",{"Title":"6 People Strategies for Successful Digital Transformation","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script><i>, an exclusive white paper from General Assembly. Download the full paper </i><a href="http://enterprise-go.generalassemb.ly/cpg-whitepaper?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=cpg-whitepaper" id="link_5ac76264423a7"><i>here</i></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264423a7","Article link clicked",{"Title":"<i>here<\/i>","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script><i>.</i></p>
+<p>The digital landscape is evolving at a rapid pace, and it’s essential for companies to harness wide-ranging technical expertise in order to stay ahead. Today’s marketers must be able to analyze massive amounts of <a href="https://generalassemb.ly/data?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=cpg-whitepaper" id="link_5ac7626442769">data</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626442769","Article link clicked",{"Title":"data","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script>, IT workers must be able to <a href="https://generalassemb.ly/education/user-experience-design-immersive?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=cpg-whitepaper" id="link_5ac7626442b07">design compelling mobile app experiences</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626442b07","Article link clicked",{"Title":"design compelling mobile app experiences","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script>, and a “<a href="https://generalassemb.ly/education/product-management?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=cpg-whitepaper" id="link_5ac7626442edb">product</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626442edb","Article link clicked",{"Title":"product","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script>” is no longer only a physical object but could be a website, a piece of <a href="https://generalassemb.ly/marketing/digital-marketing/content-marketing?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=cpg-whitepaper" id="link_5ac7626443209">content</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626443209","Article link clicked",{"Title":"content","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script>, or even a training curriculum.</p>
+<p>General Assembly’s recommendation for keeping up is simple: Companies need to <a href="https://theindex.generalassemb.ly/an-employer-guide-to-investing-in-talent-64e649db83f1?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=cpg-whitepaper" id="link_5ac76264434fb">invest in learning</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264434fb","Article link clicked",{"Title":"invest in learning","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script>. The Economist magazine recently issued a <a href="http://www.economist.com/news/special-report/21714169-technological-change-demands-stronger-and-more-continuous-connections-between-education" id="link_5ac76264438e6">special report</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264438e6","Article link clicked",{"Title":"special report","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script> that highlighted the importance of “lifelong learning” as a habit that both skilled and unskilled workers must incorporate to keep pace with a rapidly developing economy. They profiled GA’s approach to tech education — including upskilling promising individuals and reskilling those with outdated competencies in data, web development, and design — as an effective way to ensure employees’ skills were kept up to date.</p>
+<p> <a href="https://generalassemb.ly/blog/how-to-cultivate-top-tech-talent-what-every-exec-needs-to-know/#more-980203227" class="more-link" id="link_5ac7626443bc7">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626443bc7","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"How to Cultivate Top Tech Talent: What Every Exec Needs to\u00a0Know"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/business/" rel="category tag">Business</a>, <a href="https://generalassemb.ly/blog/category/corporate-strategies/" rel="category tag">Corporate Strategies</a>, <a href="https://generalassemb.ly/blog/category/marketing/" rel="category tag">Marketing</a> and tagged <a href="https://generalassemb.ly/blog/tag/corporate-training/" rel="tag">Corporate Training</a>, <a href="https://generalassemb.ly/blog/tag/digital-marketing/" rel="tag">digital marketing</a>, <a href="https://generalassemb.ly/blog/tag/enterprise-hiring/" rel="tag">enterprise hiring</a>, <a href="https://generalassemb.ly/blog/tag/hiring/" rel="tag">hiring</a>, <a href="https://generalassemb.ly/blog/tag/hr/" rel="tag">hr</a>, <a href="https://generalassemb.ly/blog/tag/human-resources/" rel="tag">human resources</a>, <a href="https://generalassemb.ly/blog/tag/recruiting/" rel="tag">recruiting</a>, <a href="https://generalassemb.ly/blog/tag/technical-recruiting/" rel="tag">technical recruiting</a> on <a href="https://generalassemb.ly/blog/how-to-cultivate-top-tech-talent-what-every-exec-needs-to-know/" title="11:51 am" rel="bookmark"><time class="entry-date" datetime="2017-09-27T11:51:36+00:00">September 27, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/anandchopramcgowan/" title="View all posts by Anand Chopra-McGowan" rel="author">Anand Chopra-McGowan</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203233" class="post-980203233 post type-post status-publish format-standard hentry category-career-development category-data tag-data-science tag-diversity tag-diversity-in-tech tag-gender-equality tag-racial-equality">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/data-science-gender-race-disparity/" title="Permalink to The Study of Data Science Lags in Gender and Racial Representation" rel="bookmark">The Study of Data Science Lags in Gender and Racial Representation</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/gablog/" title="Posts by General Assembly" class="author url fn" rel="author">General Assembly</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <p><img src="https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/data-science-gender-racial-representation.jpeg?resize=625%2C313&#038;ssl=1" alt="data science gender race disparity" class="aligncenter size-full wp-image-980203260" srcset="https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/data-science-gender-racial-representation.jpeg?w=900&amp;ssl=1 900w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/data-science-gender-racial-representation.jpeg?resize=300%2C150&amp;ssl=1 300w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/data-science-gender-racial-representation.jpeg?resize=768%2C384&amp;ssl=1 768w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/data-science-gender-racial-representation.jpeg?resize=624%2C312&amp;ssl=1 624w, https://i1.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2017/09/data-science-gender-racial-representation.jpeg?resize=50%2C25&amp;ssl=1 50w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" /></p>
+<p>In the past few years, much attention has been drawn to the dearth of <a class="markup--anchor markup--p-anchor" href="https://www.wired.com/2014/10/women-data-science-invisible-can-change/" target="_blank" rel="noopener" data-href="https://www.wired.com/2014/10/women-data-science-invisible-can-change/" id="link_5ac7626452bf5">women</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626452bf5","Article link clicked",{"Title":"women","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> and <a class="markup--anchor markup--p-anchor" href="http://www.newyorker.com/business/currency/why-cant-silicon-valley-solve-its-diversity-problem" target="_blank" rel="noopener" data-href="http://www.newyorker.com/business/currency/why-cant-silicon-valley-solve-its-diversity-problem" id="link_5ac7626452ffa">people of color</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626452ffa","Article link clicked",{"Title":"people of color","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> in tech-related fields. A recent article in <a class="markup--anchor markup--p-anchor" href="https://www.forbes.com/sites/womensmedia/2017/08/03/breaking-down-the-gender-gap-in-data-science/#51ab3f824287" target="_blank" rel="noopener" data-href="https://www.forbes.com/sites/womensmedia/2017/08/03/breaking-down-the-gender-gap-in-data-science/#51ab3f824287" id="link_5ac76264533de">Forbes</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264533de","Article link clicked",{"Title":"Forbes","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> noted, “Women hold only about 26% of data jobs in the United States. There are a few reasons for the gender gap: a lack of STEM education for women early on in life, lack of mentorship for women in data science, and human resources rules and regulations not catching up to gender balance policies, to name a few.” Federal civil rights data further <a class="markup--anchor markup--p-anchor" href="http://blogs.edweek.org/edweek/curriculum/2016/06/black_latino_students_lack_access_high_level_math_science_data.html" target="_blank" rel="noopener" data-href="http://blogs.edweek.org/edweek/curriculum/2016/06/black_latino_students_lack_access_high_level_math_science_data.html" id="link_5ac762645388d">demonstrate</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762645388d","Article link clicked",{"Title":"demonstrate","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> that “black and Latino high school students are being shortchanged in their access to high-level math and science courses that could prepare them for college” and for careers in fields like data science.</p>
+<p>As an education company offering tech-oriented courses at <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/locations?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" target="_blank" rel="noopener" data-href="https://generalassemb.ly/locations?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" id="link_5ac7626453c57">20 campuses</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626453c57","Article link clicked",{"Title":"20 campuses","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> across the world, <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" target="_blank" rel="noopener" data-href="https://generalassemb.ly?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" id="link_5ac7626454067">General Assembly</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626454067","Article link clicked",{"Title":"General Assembly","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> is in a unique position to analyze the current crop of students looking to change the dynamics of the workplace.</p>
+<p>Looking at GA data for our <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/education?format=courses?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" target="_blank" rel="noopener" data-href="https://generalassemb.ly/education?format=courses?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" id="link_5ac762645440f">part-time programs</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762645440f","Article link clicked",{"Title":"part-time programs","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> (which typically reach students who already have jobs and are looking to expand their skill set as they pursue a promotion or a career shift), here’s what we found: While great strides have been made in fields like <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/coding?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" target="_blank" rel="noopener" data-href="https://generalassemb.ly/coding?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" id="link_5ac76264547ff">web development</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac76264547ff","Article link clicked",{"Title":"web development","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> and <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/design/user-experience-design?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" target="_blank" rel="noopener" data-href="https://generalassemb.ly/design/user-experience-design?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" id="link_5ac7626454bc4">user experience (UX) design</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626454bc4","Article link clicked",{"Title":"user experience (UX) design","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script>, <a class="markup--anchor markup--p-anchor" href="https://generalassemb.ly/data?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" target="_blank" rel="noopener" data-href="https://generalassemb.ly/data?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=datasciencedisparity" id="link_5ac7626454f8f">data science</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626454f8f","Article link clicked",{"Title":"data science","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script> — a relatively newer concentration — still has a ways to go in terms of gender and racial equality.</p>
+<p> <a href="https://generalassemb.ly/blog/data-science-gender-race-disparity/#more-980203233" class="more-link" id="link_5ac7626455380">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac7626455380","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"The Study of Data Science Lags in Gender and Racial Representation"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/career-development/" rel="category tag">Career Development</a>, <a href="https://generalassemb.ly/blog/category/data/" rel="category tag">Data</a> and tagged <a href="https://generalassemb.ly/blog/tag/data-science/" rel="tag">data science</a>, <a href="https://generalassemb.ly/blog/tag/diversity/" rel="tag">Diversity</a>, <a href="https://generalassemb.ly/blog/tag/diversity-in-tech/" rel="tag">Diversity in tech</a>, <a href="https://generalassemb.ly/blog/tag/gender-equality/" rel="tag">gender equality</a>, <a href="https://generalassemb.ly/blog/tag/racial-equality/" rel="tag">Racial Equality</a> on <a href="https://generalassemb.ly/blog/data-science-gender-race-disparity/" title="10:16 am" rel="bookmark"><time class="entry-date" datetime="2017-09-25T10:16:52+00:00">September 25, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/gablog/" title="View all posts by General Assembly" rel="author">General Assembly</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980203248" class="post-980203248 post type-post status-publish format-standard hentry category-business category-career-development category-corporate-strategies tag-hiring tag-job-market tag-policy tag-skills-gap">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/9-ways-to-develop-talent-for-tomorrow-economy-policy-ideas/" title="Permalink to 9 Ways to Develop Talent for Tomorrow&#8217;s Economy" rel="bookmark">9 Ways to Develop Talent for Tomorrow&#8217;s Economy</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/liz-simon/" title="Posts by Liz Simon" class="author url fn" rel="author">Liz Simon</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <div style="width: 910px" class="wp-caption alignnone"><img class="graf-image" src="https://i0.wp.com/cdn-images-1.medium.com/max/900/1*Ou7--6apLG8EaAORXtzANw.jpeg?resize=625%2C313&#038;ssl=1" alt="Policy Ideas Skills Gap" data-image-id="1*Ou7--6apLG8EaAORXtzANw.jpeg" data-width="1400" data-height="700" data-recalc-dims="1" /><p class="wp-caption-text">Create opportunities for employers and job-seekers alike with these proposed policies to help close chronic skills gaps.</p></div>
+<p>A tightening labor market, persistent skills gaps (in fields from manufacturing to technology), and the short shelf life of skills in the rapidly changing digital economy, have led to a seemingly paradoxical narrative in the education-to-employment pipeline.</p>
+<p>In manufacturing, for instance, 70 percent of companies <a href="http://www.themanufacturinginstitute.org/~/media/827DBC76533942679A15EF7067A704CD.ashx" target="_blank" rel="noopener" id="link_5ac762645d6ed">now face shortages</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762645d6ed","Article link clicked",{"Title":"now face shortages","Page":"9 Ways to Develop Talent for Tomorrow&#8217;s Economy"}]);</script> of workers with the necessary technology skills. And yet millions of Americans struggle to find jobs that put them on a path toward social and economic mobility or, at least, a comfortable perch in the middle class.</p>
+<p>What’s worse, the compounding forces of automation and artificial intelligence (AI) will begin to dislocate a growing number of workers — putting unprecedented pressure on an education and workforce development system that is ill-equipped to tackle looming reskilling and training challenges.</p>
+<h2 class="graf graf--h3"><strong class="markup--strong markup--h3-strong">New Models Emerge</strong></h2>
+<p>In the last five years, an array of non-accredited education and training providers has surfaced to address these challenges, including <a href="http://generalassemb.ly/?utm_medium=social&amp;utm_source=the-index&amp;utm_campaign=9-policies" target="_blank" rel="noopener" id="link_5ac762645da01">General Assembly</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762645da01","Article link clicked",{"Title":"General Assembly","Page":"9 Ways to Develop Talent for Tomorrow&#8217;s Economy"}]);</script>, as well as on-demand learning platforms, ultra-low-cost course providers (like StraighterLine or Coursera), and new approaches to “education as an employee benefit” (pioneered by companies like <a href="https://www.guildeducation.com/partners/chipotle" target="_blank" rel="noopener" data-href="https://www.guildeducation.com/partners/chipotle" id="link_5ac762645dd15">Chipotle</a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762645dd15","Article link clicked",{"Title":"Chipotle","Page":"9 Ways to Develop Talent for Tomorrow&#8217;s Economy"}]);</script>, in partnership with Guild Education).</p>
+<p> <a href="https://generalassemb.ly/blog/9-ways-to-develop-talent-for-tomorrow-economy-policy-ideas/#more-980203248" class="more-link" id="link_5ac762645e059">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762645e059","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"9 Ways to Develop Talent for Tomorrow&#8217;s Economy"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/business/" rel="category tag">Business</a>, <a href="https://generalassemb.ly/blog/category/career-development/" rel="category tag">Career Development</a>, <a href="https://generalassemb.ly/blog/category/corporate-strategies/" rel="category tag">Corporate Strategies</a> and tagged <a href="https://generalassemb.ly/blog/tag/hiring/" rel="tag">hiring</a>, <a href="https://generalassemb.ly/blog/tag/job-market/" rel="tag">job market</a>, <a href="https://generalassemb.ly/blog/tag/policy/" rel="tag">policy</a>, <a href="https://generalassemb.ly/blog/tag/skills-gap/" rel="tag">skills gap</a> on <a href="https://generalassemb.ly/blog/9-ways-to-develop-talent-for-tomorrow-economy-policy-ideas/" title="10:22 am" rel="bookmark"><time class="entry-date" datetime="2017-09-19T10:22:57+00:00">September 19, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/liz-simon/" title="View all posts by Liz Simon" rel="author">Liz Simon</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+							
+  <article id="post-980202355" class="post-980202355 post type-post status-publish format-standard hentry category-career-development tag-adult-education tag-adult-learners tag-adult-school tag-b2s tag-back-to-school tag-boost-your-career tag-bts tag-career-advice tag-going-back-to-school tag-improve-your-resume tag-learn-something-new tag-learning tag-resume-tips tag-start-something-new tag-teaching-adults">
+        <header>
+            <h2 class="no-hover">
+        <a href="https://generalassemb.ly/blog/5-reasons-adult-learners-fear-going-back-to-school/" title="Permalink to 5 Reasons Adults Fear Going Back to School — and How to Get Over Them" rel="bookmark">5 Reasons Adults Fear Going Back to School — and How to Get Over Them</a>
+      </h2>
+              <p class="author">By 
+          <a href="https://generalassemb.ly/blog/author/laura-leebove/" title="Posts by Laura Leebove" class="author url fn" rel="author">Laura Leebove</a>        </p>
+    </header><!-- .entry-header -->
+
+        <div class="entry-content">
+            <p><img class="aligncenter size-large wp-image-980202356" src="https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2016/09/FINAL-DSC_2243.jpg?resize=625%2C417&#038;ssl=1" alt="Adult learners fear going back to school" srcset="https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2016/09/FINAL-DSC_2243.jpg?resize=1024%2C684&amp;ssl=1 1024w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2016/09/FINAL-DSC_2243.jpg?resize=300%2C200&amp;ssl=1 300w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2016/09/FINAL-DSC_2243.jpg?resize=768%2C513&amp;ssl=1 768w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2016/09/FINAL-DSC_2243.jpg?resize=624%2C417&amp;ssl=1 624w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2016/09/FINAL-DSC_2243.jpg?resize=50%2C33&amp;ssl=1 50w, https://i0.wp.com/blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/uploads/2016/09/FINAL-DSC_2243.jpg?w=1200&amp;ssl=1 1200w" sizes="(max-width: 625px) 100vw, 625px" data-recalc-dims="1" /></p>
+<p>Taking a class can be a step toward that promotion you’ve been angling for, or lay the foundation for a full-on career change. But for many adults, committing to weeks, months, or even a day of lessons can be nerve-wracking.</p>
+<p>It’s true: The back-to-school jitters are real at any age. Learning new skills often involves rearranging your schedule, planning for additional expenses, or combating the nerves that come with venturing out of your comfort zone. But if you can overcome these barriers, your potential will skyrocket.</p>
+<p>Skilling up has innumerable benefits: It can give you a competitive edge in the job market; increase your value within your company; and, of course, keep you ahead of the curve in a rapidly changing tech environment. On a personal level, it can boost morale and give you creative inspiration. There’s truly nothing to lose.</p>
+<p> <a href="https://generalassemb.ly/blog/5-reasons-adult-learners-fear-going-back-to-school/#more-980202355" class="more-link" id="link_5ac762646fe00">Continue reading <span class="meta-nav">&rarr;</span></a><script>_kmq.push(["trackClickOnOutboundLink","link_5ac762646fe00","Article link clicked",{"Title":"Continue reading <span class=\"meta-nav\">&rarr;<\/span>","Page":"5 Reasons Adults Fear Going Back to School \u2014 and How to Get Over Them"}]);</script></p>
+          </div><!-- .entry-content -->
+    
+    <footer class="entry-meta">
+      This entry was posted in <a href="https://generalassemb.ly/blog/category/career-development/" rel="category tag">Career Development</a> and tagged <a href="https://generalassemb.ly/blog/tag/adult-education/" rel="tag">adult education</a>, <a href="https://generalassemb.ly/blog/tag/adult-learners/" rel="tag">adult learners</a>, <a href="https://generalassemb.ly/blog/tag/adult-school/" rel="tag">adult school</a>, <a href="https://generalassemb.ly/blog/tag/b2s/" rel="tag">B2S</a>, <a href="https://generalassemb.ly/blog/tag/back-to-school/" rel="tag">back to school</a>, <a href="https://generalassemb.ly/blog/tag/boost-your-career/" rel="tag">boost your career</a>, <a href="https://generalassemb.ly/blog/tag/bts/" rel="tag">BTS</a>, <a href="https://generalassemb.ly/blog/tag/career-advice/" rel="tag">career advice</a>, <a href="https://generalassemb.ly/blog/tag/going-back-to-school/" rel="tag">going back to school</a>, <a href="https://generalassemb.ly/blog/tag/improve-your-resume/" rel="tag">improve your resume</a>, <a href="https://generalassemb.ly/blog/tag/learn-something-new/" rel="tag">learn something new</a>, <a href="https://generalassemb.ly/blog/tag/learning/" rel="tag">learning</a>, <a href="https://generalassemb.ly/blog/tag/resume-tips/" rel="tag">resume tips</a>, <a href="https://generalassemb.ly/blog/tag/start-something-new/" rel="tag">start something new</a>, <a href="https://generalassemb.ly/blog/tag/teaching-adults/" rel="tag">teaching adults</a> on <a href="https://generalassemb.ly/blog/5-reasons-adult-learners-fear-going-back-to-school/" title="3:55 pm" rel="bookmark"><time class="entry-date" datetime="2017-08-28T15:55:07+00:00">August 28, 2017</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://generalassemb.ly/blog/author/laura-leebove/" title="View all posts by Laura Leebove" rel="author">Laura Leebove</a></span></span>.                </footer><!-- .entry-meta -->
+  </article><!-- #post -->
+			
+			    <nav id="nav-below" class="navigation" role="navigation">
+      <span class='page-numbers current'><span class="hide-under-600">1</span></span>
+<a class='page-numbers' href='https://generalassemb.ly/blog/page/2/'><span class="hide-under-600">2</span></a>
+<a class='page-numbers' href='https://generalassemb.ly/blog/page/3/'><span class="hide-under-600">3</span></a>
+<a class='page-numbers' href='https://generalassemb.ly/blog/page/4/'><span class="hide-under-600">4</span></a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://generalassemb.ly/blog/page/87/'><span class="hide-under-600">87</span></a>
+<a class="next page-numbers" href="https://generalassemb.ly/blog/page/2/">Older <span class="meta-nav"><span class="meta-nav"><svg width="10px" height="16px" viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <polygon stroke="none" fill="#FA4542" fill-rule="evenodd" points="1.9 15.7 0.4 14.3 6.7 8 0.4 1.7 1.9 0.3 9.6 8"></polygon>
+</svg></span></a>    </nav><!-- .navigation -->
+
+
+		
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+  <div id="secondary" class="widget-area" role="complementary">
+    <aside class="widget widget_categories">
+      <h3>Subscribe</h3>
+      <form id='sidebar-email-subscription' class='ga-prospect-form'>
+        <label class="email-subscription-description" for="sidebar-email-input">
+          Join our newsletter and find out about upcoming programs and events
+        </label>
+        <input type="email" id="sidebar-email-input" placeholder="Your email" name="email">
+        <input type="hidden" name="ip_address" value="154.73.157.88">
+        <input type="hidden" name="lists[]" value="Onboarding Universal Drip">
+        <input type="hidden" name="source_campaign" value="GA Blog - Sidebar">
+        <input type="hidden" name="source_campaign_category" value="GA Blog">
+        <input type="hidden" name="event" value="onboarding_online_welcome">
+        <input type="submit" class="button submit-subscription" value="Get Updates" id="sidebar-email-submit">
+        <div style="margin-bottom: 5px; margin-top: 5px;">
+          <input type="checkbox" name="opt_in">
+          <label for="opt_in" style="display:inline;">
+            Yes! Please keep me posted on news, events, and happenings from GA.
+          </label>
+        </div>
+        <div class="disclaimer" style="color:#818181; font-size: 14px;">
+          By providing us with your email, you agree to the terms of our <a style="color: #818181; text-decoration: underline;" href='https://generalassemb.ly/privacy_policy'>Privacy Policy</a> and <a style="color: #818181; text-decoration: underline;" href='https://generalassemb.ly/terms_of_service'>Terms of Service</a>.
+        </div>
+      </form>
+    </aside>
+
+    <aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-1947"><a href="https://generalassemb.ly/blog/category/life-at-ga/" >#LifeAtGA</a>
+</li>
+	<li class="cat-item cat-item-474"><a href="https://generalassemb.ly/blog/category/alumni-stories/" >Alumni Stories</a>
+</li>
+	<li class="cat-item cat-item-1939"><a href="https://generalassemb.ly/blog/category/business/" >Business</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://generalassemb.ly/blog/category/career-development/" >Career Development</a>
+</li>
+	<li class="cat-item cat-item-1935"><a href="https://generalassemb.ly/blog/category/coding/" >Coding</a>
+</li>
+	<li class="cat-item cat-item-365"><a href="https://generalassemb.ly/blog/category/corporate-strategies/" >Corporate Strategies</a>
+</li>
+	<li class="cat-item cat-item-1941"><a href="https://generalassemb.ly/blog/category/data/" >Data</a>
+</li>
+	<li class="cat-item cat-item-1973"><a href="https://generalassemb.ly/blog/category/ga-news/" >GA News</a>
+</li>
+	<li class="cat-item cat-item-1948"><a href="https://generalassemb.ly/blog/category/marketing/" >Marketing</a>
+</li>
+	<li class="cat-item cat-item-1175"><a href="https://generalassemb.ly/blog/category/life-at-ga/social-impact/" >Social Impact</a>
+</li>
+	<li class="cat-item cat-item-1937"><a href="https://generalassemb.ly/blog/category/ux-and-design/" >UX &amp; Design</a>
+</li>
+		</ul>
+</aside><aside id="search-3" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="https://generalassemb.ly/blog/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form></aside>		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="https://generalassemb.ly/blog/best-prototyping-tools-ux-design-2018/">The Best Prototyping Tools for UX Designers in 2018</a>
+						</li>
+					<li>
+				<a href="https://generalassemb.ly/blog/product-experience-loop-user-experience-mode-shift-friction/">Don’t Frustrate Users With Gaps in Your Product Experience</a>
+						</li>
+					<li>
+				<a href="https://generalassemb.ly/blog/path-diverse-vibrant-tech-community/">The Path to a Diverse, Vibrant Tech Community</a>
+						</li>
+					<li>
+				<a href="https://generalassemb.ly/blog/agile-vs-lean-vs-design-thinking-workflow/">How Blending Lean, Agile, and Design Thinking Will Transform Your Team</a>
+						</li>
+					<li>
+				<a href="https://generalassemb.ly/blog/veterans-general-assembly-servant-leadership-from-coast-guard-to-education/">Servant Leadership: From Coast Guard to Education</a>
+						</li>
+				</ul>
+		</aside>		  </div><!-- #secondary -->
+
+  </div>
+
+<script src="https://ga-static-assets-s3.global.ssl.fastly.net/ga-visitor/current/ga-visitor.min.js"></script>
+<script src="https://ga-static-assets-s3.global.ssl.fastly.net/canspam-client/current/canspam-client.js"></script>
+<!-- Prospect capture script -->
+<script src="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/prospect_form.js"></script>
+
+<!-- Doubleclick -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 973133998;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+	<div style="display:inline;">
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/973133998/?value=0&amp;guid=ON&amp;script=0"/>
+	</div>
+</noscript>
+<!-- End Doubleclick -->
+
+	<div style="display:none">
+	</div>
+<script data-cfasync="false" type="text/javascript">
+var addthis_config = {"data_track_clickback":false,"ui_atversion":300,"ignore_server_config":true};
+var addthis_share = {"passthrough":{"twitter":{"via":"GA"}}};
+</script>
+                <!-- AddThis Settings Begin -->
+                <script data-cfasync="false" type="text/javascript">
+                    var addthis_product = "wpp-5.3.3";
+                    var wp_product_version = "wpp-5.3.3";
+                    var wp_blog_version = "4.6.1";
+                    var addthis_plugin_info = {"info_status":"enabled","cms_name":"WordPress","cms_version":"4.6.1","plugin_name":"Share Buttons by AddThis","plugin_version":"5.3.3","anonymous_profile_id":"wp-50d6012783cf1e90660b25c5c1a76f90","plugin_mode":"WordPress","select_prefs":{"addthis_per_post_enabled":true,"addthis_above_enabled":true,"addthis_below_enabled":false,"addthis_sidebar_enabled":false,"addthis_mobile_toolbar_enabled":false,"addthis_above_showon_home":false,"addthis_below_showon_home":false,"addthis_above_showon_pages":false,"addthis_below_showon_pages":false,"addthis_above_showon_categories":false,"addthis_below_showon_categories":false,"addthis_above_showon_archives":false,"addthis_below_showon_archives":false,"addthis_above_showon_posts":true,"addthis_above_showon_excerpts":true,"addthis_below_showon_posts":true,"addthis_below_showon_excerpts":true,"addthis_sidebar_showon_home":true,"addthis_sidebar_showon_posts":true,"addthis_sidebar_showon_pages":true,"addthis_sidebar_showon_archives":true,"addthis_sidebar_showon_categories":true,"addthis_mobile_toolbar_showon_home":true,"addthis_mobile_toolbar_showon_posts":true,"addthis_mobile_toolbar_showon_pages":true,"addthis_mobile_toolbar_showon_archives":true,"addthis_mobile_toolbar_showon_categories":true,"sharing_enabled_on_post_via_metabox":true},"page_info":{"template":"home","post_type":""}};
+                    if (typeof(addthis_config) == "undefined") {
+                        var addthis_config = {"data_track_clickback":false,"ui_atversion":300,"ignore_server_config":true};
+                    }
+                    if (typeof(addthis_share) == "undefined") {
+                        var addthis_share = {"passthrough":{"twitter":{"via":"GA"}}};
+                    }
+                    if (typeof(addthis_layers) == "undefined") {
+                        var addthis_layers = {};
+                    }
+                </script>
+                <script
+                    data-cfasync="false"
+                    type="text/javascript"
+                    src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53daa4802054fc2a "
+                    
+                >
+                </script>
+                <script data-cfasync="false" type="text/javascript">
+                    (function() {
+                        var at_interval = setInterval(function () {
+                            if(window.addthis) {
+                                clearInterval(at_interval);
+                                addthis.layers(addthis_layers);
+                            }
+                        },1000)
+                    }());
+                </script>
+                <script type="text/javascript">
+var customerId = 'd617256082f7c492f37283fe0f25c6e8'
+var SPM = Sailthru.SPM;
+SPM.setup(customerId, {
+autoTrackPageviews: true,
+useStoredTags: true
+});
+</script>
+<link rel='stylesheet' id='addthis_output-css'  href='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/plugins/addthis/css/output.css?ver=4.6.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201814'></script>
+<script type='text/javascript' src='https://blog-pantheon-prod.global.ssl.fastly.net/blog/wp-content/themes/twentytwelve/js/navigation.js?ver=20140711'></script>
+<script type='text/javascript' src='https://generalassemb.ly/blog/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201814.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.1.1',blog:'108411852',post:'0',tz:'-4',srv:'generalassemb.ly'} ]);
+	_stq.push([ 'clickTrackerInit', '108411852', '0' ]);
+</script>
+<!--wp_footer-->
+<!-- navi: footer --><div data-navi-footer-ip-address='154.73.157.88'><footer class='navi_footer' data-global-footer data-navi-footer>
+<div class='navi_footer-grid'>
+<div class='navi_footer-grid-one-half navi_footer-main-col'>
+<p class='navi_footer-standfirst'>General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing careers they love.</p>
+<a class='navi_footer-social-icons_facebook' href='http://www.facebook.com/gnrlassembly' target='_blank' title='Visit General Assembly on Facebook'>
+Facebook
+</a>
+<a class='navi_footer-social-icons_twitter' href='https://twitter.com/ga' target='_blank' title='Follow @GA on Twitter'>
+Twitter
+</a>
+<a class='navi_footer-social-icons_linkedin' href='http://www.linkedin.com/company/2408664' target='_blank' title='Network with General Assembly on LinkedIn'>
+LinkedIn
+</a>
+<a class='navi_footer-social-icons_instagram' href='http://instagram.com/generalassembly' target='_blank' title='See what’s happening on GA’s Instagram.'>
+Instagram
+</a>
+<a class='navi_footer-social-icons_googleplus' href='https://plus.google.com/+GeneralAssembly' rel='publisher' target='_blank' title='Visit General Assembly on Google Plus'>
+Google+
+</a>
+<a class='navi_footer-social-icons_youtube' href='https://www.youtube.com/channel/UCh1rrm00DbprS8UcLd4ochw' rel='publisher' target='_blank' title='Visit General Assembly on YouTube'>
+YouTube
+</a>
+<div class='navi_footer-signup-container' data-navi-footer-signup></div>
+<p class='singapore-footnote' data-singapore-footnote>
+General Assembly Space Academy
+<br>
+ACRA UEN NUMBER: 201524437R
+<br>
+ERF Registration Period: 8 September 2015 - 7 September 2016
+</p>
+</div>
+<div class='navi_footer-grid-one-half ga-end-row'>
+<div class='navi_footer-grid-full'>
+<div class='navi_footer-grid-one-half'>
+<div class='nav_footer-links'>
+<h2 class='navi_footer-links_header'>Company</h2>
+<ul class='navi_footer-links_list'>
+<li><a class="navi_footer-links_list_item" href="/why-ga-is-worth-it">About</a></li>
+<li><a class="navi_footer-links_list_item" href="/locations">Locations</a></li>
+<li><a class="navi_footer-links_list_item" href="https://theindex.generalassemb.ly/">Blog</a></li>
+<li><a class="navi_footer-links_list_item" href="/careers">Careers</a></li>
+<li><a class="navi_footer-links_list_item" href="/contact">Contact</a></li>
+<li><a class="navi_footer-links_list_item" href="/faq">FAQ</a></li>
+<li><a class="navi_footer-links_list_item" href="/press">Press</a></li>
+</ul>
+</div>
+</div>
+<div class='navi_footer-grid-one-half ga-end-row'>
+<div class='nav_footer-links'>
+<h2 class='navi_footer-links_header'>Community</h2>
+<ul class='navi_footer-links_list'>
+<li><a class="navi_footer-links_list_item" href="/teach-at-ga">Become an Instructor</a></li>
+<li><a class="navi_footer-links_list_item" href="/gi-bill">Veteran Resources</a></li>
+<li><a class="navi_footer-links_list_item" href="/corporate-digital-training">Corporate Digital Training</a></li>
+<li><a class="navi_footer-links_list_item" href="/opportunity-fund/partners">Fund a Scholarship</a></li>
+<li><a class="navi_footer-links_list_item" href="/corporate-digital-training/talent-acquisition">Talent Acquisition</a></li>
+<li><a class="navi_footer-links_list_item" href="/corporate-digital-training/talent-assessment">Benchmark Talent</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='navi_footer-grid'>
+<div class='navi_footer-grid-one-whole navi_footer-footnote'>
+<p class='navi_footer-footnote_copyright'>
+&copy;
+2018
+General Assembly. All rights reserved.
+</p>
+<ul class='navi_footer-footnote_links'>
+<li><a href="/regulatory-information">Regulatory Information</a></li>
+<li><a href="/terms_of_service">Terms</a></li>
+<li><a href="/privacy_policy">Privacy</a></li>
+</ul>
+<p class='navi_footer-footnote_builtin'>
+<a target="_blank" href="http://nytm.org/made-in-nyc">Assembled in NYC</a>
+</p>
+</div>
+</div>
+</footer>
+<script type='text/javascript' src='https://ga-navi-production-herokuapp-com.global.ssl.fastly.net/assets/application-00a3951a09a7051341f98b716bd010486ce45143cb52e3bb23fa9341c33cc680.js'></script></div><!-- /navi: footer --><!-- navi: first time --><div data-new-user-lightbox-ip-address='154.73.157.88'><section class='new_user_lightbox disabled' data-metros="&lt;option disabled='disabled' hidden='hidden' selected='selected' value=''&gt;Please choose&lt;/option&gt;,&lt;option data-metro-id='16' value='online'&gt;Online&lt;/option&gt;,&lt;option disabled='disabled' value=''&gt;──────────&lt;/option&gt;,&lt;option data-metro-id='13' value='atlanta'&gt;Atlanta&lt;/option&gt;,&lt;option data-metro-id='11' value='austin'&gt;Austin&lt;/option&gt;,&lt;option data-metro-id='7' value='boston'&gt;Boston&lt;/option&gt;,&lt;option data-metro-id='22' value='brisbane'&gt;Brisbane&lt;/option&gt;,&lt;option data-metro-id='15' value='chicago'&gt;Chicago&lt;/option&gt;,&lt;option data-metro-id='17' value='dallas'&gt;Dallas&lt;/option&gt;,&lt;option data-metro-id='19' value='denver'&gt;Denver&lt;/option&gt;,&lt;option data-metro-id='12' value='hong-kong'&gt;Hong Kong&lt;/option&gt;,&lt;option data-metro-id='3' value='london'&gt;London&lt;/option&gt;,&lt;option data-metro-id='8' value='los-angeles'&gt;Los Angeles&lt;/option&gt;,&lt;option data-metro-id='9' value='melbourne'&gt;Melbourne&lt;/option&gt;,&lt;option data-metro-id='1' value='new-york-city'&gt;New York City&lt;/option&gt;,&lt;option data-metro-id='24' value='providence'&gt;Providence&lt;/option&gt;,&lt;option data-metro-id='25' value='san-diego'&gt;San Diego&lt;/option&gt;,&lt;option data-metro-id='2' value='san-francisco'&gt;San Francisco&lt;/option&gt;,&lt;option data-metro-id='14' value='seattle'&gt;Seattle&lt;/option&gt;,&lt;option data-metro-id='18' value='singapore'&gt;Singapore&lt;/option&gt;,&lt;option data-metro-id='5' value='sydney'&gt;Sydney&lt;/option&gt;,&lt;option data-metro-id='10' value='washington-dc'&gt;Washington, D.C.&lt;/option&gt;" data-navi-new-user-lightbox data-topics="&lt;label for='coding'&gt;&lt;input type='checkbox' name='topics' id='coding' value='coding'&gt;Coding&lt;/label&gt;&lt;label for='marketing'&gt;&lt;input type='checkbox' name='topics' id='marketing' value='marketing'&gt;Marketing&lt;/label&gt;&lt;label for='design'&gt;&lt;input type='checkbox' name='topics' id='design' value='design'&gt;Design&lt;/label&gt;&lt;label for='data'&gt;&lt;input type='checkbox' name='topics' id='data' value='data'&gt;Data&lt;/label&gt;&lt;label for='business'&gt;&lt;input type='checkbox' name='topics' id='business' value='business'&gt;Business&lt;/label&gt;"></section>
+</div><!-- /navi: first time -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0f94e32be2","applicationID":"25466851","transactionName":"M1xQZ0cAWhJQABFeVgoWc1BBCFsPHgoLU1wc","queueTime":28,"applicationTime":922,"atts":"HxtTEQ8aSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
